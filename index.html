@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+		.icon {
+			margin-bottom: 10px;
+			position: relative;
+			height: 32px;
+			background: lightgrey;
+		}
+		.icon:before, .icon:after {
+			content: "";
+			background: red;
+			height: 2px;
+			width: 30px;
+			position: absolute;
+			top: 15px;
+			left: 0;
+			transition: all 1s;
+		}
+		.icon.on:before {
+			background: green;
+			-webkit-transform: rotate(-180deg);
+			-ms-transform: rotate(-180deg);
+			-o-transform: rotate(-180deg);
+			transform: rotate(-180deg);
+		}
+		.icon.on:after {
+			background: green;
+			-webkit-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="icon icon-plus"></div>
+	
+	<script>
+		var icons = document.querySelectorAll('.icon');
+		for (var i = 0, l = icons.length; i < l; i += 1) {
+			icons[i].addEventListener('click', function (el) {
+				if (this.className.indexOf(' on') > 0) {
+					this.className = this.className.replace(' on', '');
+				} else {
+					this.className = this.className + ' on';
+				}
+			});
+		}
+	</script>
+</body>
+</html>
