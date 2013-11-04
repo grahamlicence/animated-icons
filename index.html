@@ -8,7 +8,7 @@
 			height: 32px;
 			background: lightgrey;
 		}
-		.icon:before, .icon:after {
+		.icon-plus:before, .icon-plus:after {
 			content: "";
 			background: red;
 			height: 2px;
@@ -18,25 +18,64 @@
 			left: 0;
 			transition: all 1s;
 		}
-		.icon.on:before {
+		.icon-plus.on:before {
 			background: green;
 			-webkit-transform: rotate(-180deg);
 			-ms-transform: rotate(-180deg);
 			-o-transform: rotate(-180deg);
 			transform: rotate(-180deg);
 		}
-		.icon.on:after {
+		.icon-plus.on:after {
 			background: green;
 			-webkit-transform: rotate(90deg);
 			-ms-transform: rotate(90deg);
 			-o-transform: rotate(90deg);
 			transform: rotate(90deg);
 		}
+
+		.icon-arrow:before, .icon-arrow:after {
+			content: "";
+			background: grey;
+			height: 2px;
+			width: 15px;
+			position: absolute;
+			top: 15px;
+			left: 0;
+			transition: all 1s;
+		}
+		.icon-arrow:before {
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+			top: 10px;
+		}
+		.icon-arrow.on:before {
+			-webkit-transform: rotate(135deg);
+			-ms-transform: rotate(135deg);
+			-o-transform: rotate(135deg);
+			transform: rotate(135deg);
+		}
+		.icon-arrow:after {
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			top: 20px;
+		}
+		.icon-arrow.on:after {
+			-webkit-transform: rotate(-135deg);
+			-ms-transform: rotate(-135deg);
+			-o-transform: rotate(-135deg);
+			transform: rotate(-135deg);
+		}
 	</style>
 </head>
 
 <body>
 	<div class="icon icon-plus"></div>
+
+	<div class="icon icon-arrow"></div>
 	
 	<script>
 		var icons = document.querySelectorAll('.icon');
