@@ -41,7 +41,7 @@
 			position: absolute;
 			top: 15px;
 			left: 0;
-			transition: all 1s;
+			transition: all 0.5s;
 		}
 		.icon-arrow:before {
 			-webkit-transform: rotate(45deg);
@@ -69,6 +69,27 @@
 			-o-transform: rotate(-135deg);
 			transform: rotate(-135deg);
 		}
+
+		.icon-loading:before {
+			content: "";
+			/*background: red;*/
+			/*background-image: -webkit-linear-gradient(left, red, blue);*/
+			/*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0)));*/
+			height: 200px;
+			width: 200px;
+			position: absolute;
+			border-radius: 20px;
+			/*border: 10px red solid;*/
+			top: 15px;
+			left: 0;
+			transition: all 1s;
+			border-left-width: 10px;
+			border-right-width: 0;
+			-webkit-border-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+		}
+		.icon-loading {
+
+		}
 	</style>
 </head>
 
@@ -76,6 +97,8 @@
 	<div class="icon icon-plus"></div>
 
 	<div class="icon icon-arrow"></div>
+
+	<div class="icon icon-loading"></div>
 	
 	<script>
 		var icons = document.querySelectorAll('.icon');
