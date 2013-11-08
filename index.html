@@ -70,26 +70,44 @@
 			transform: rotate(-135deg);
 		}
 
-		.icon-loading:before {
+		.icon-block-arrow {
+			overflow: hidden;
+		}
+		.icon-block-arrow:before, .icon-block-arrow:after {
 			content: "";
-			/*background: red;*/
-			/*background-image: -webkit-linear-gradient(left, red, blue);*/
-			/*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0)));*/
-			height: 200px;
-			width: 200px;
+			background: grey;
+			height: 15px;
+			width: 15px;
 			position: absolute;
-			border-radius: 20px;
-			/*border: 10px red solid;*/
-			top: 15px;
 			left: 0;
-			transition: all 1s;
-			border-left-width: 10px;
-			border-right-width: 0;
-			-webkit-border-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+			transition: all 0.5s;
 		}
-		.icon-loading {
+		.icon-block-arrow:before {
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+			top: 9px;
+		}
+		.icon-block-arrow.on:before {
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+			left: 12px;
+		}
+		.icon-block-arrow:after {
+			background: lightgrey;
+			top: 5px;
+			left: -6px;
+			height: 25px;
+		}
+		.icon-block-arrow.on:after {
+			/*-webkit-transform: rotate(-45deg);*/
+			left: 18px;
+		}
 
-		}
+
 	</style>
 </head>
 
@@ -98,7 +116,7 @@
 
 	<div class="icon icon-arrow"></div>
 
-	<div class="icon icon-loading"></div>
+	<div class="icon icon-block-arrow"></div>
 	
 	<script>
 		var icons = document.querySelectorAll('.icon');
