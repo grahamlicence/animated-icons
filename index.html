@@ -198,6 +198,25 @@
 			left: -2px;
 		}
 
+		.icon__chevron {
+		}
+		.icon__chevron:after {
+			content: "\203A";
+			font-style: normal;
+			font-size: 40px;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+		.icon__chevron.on:after {			
+            -moz-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            transform: scaleX(-1);
+            -ms-filter: flipv; /*IE*/
+            filter: flipv; /*IE*/
+		}
 
 	</style>
 </head>
@@ -221,6 +240,10 @@
 
 	<p>
 		<i class="icon icon__hamburger"></i>
+	</p>
+
+	<p>
+		<i class="icon icon__chevron"></i>
 	</p>
 	
 	<script>
